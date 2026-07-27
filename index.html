@@ -24,7 +24,7 @@
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -55,33 +55,41 @@
         }
         .container {
             max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
+            margin: 20px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
+        /* Mobile responsive layout adjustment */
         .main-layout {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .main-layout {
+                flex-direction: row;
+            }
         }
         .content-left {
             flex: 2;
-            min-width: 300px;
+            width: 100%;
         }
         .sidebar-right {
             flex: 1;
-            min-width: 280px;
+            width: 100%;
         }
         .main-headline {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-sizing: border-box;
         }
         .main-headline h2 {
             color: #8b0000;
             margin-top: 0;
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
         .meta-info {
             font-size: 0.9rem;
@@ -96,9 +104,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
             border: 2px solid #ff3333;
+            box-sizing: border-box;
         }
         .countdown-widget h3 {
             margin-top: 0;
@@ -120,7 +129,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
         }
         .map-widget h3 {
             margin-top: 0;
@@ -131,7 +141,7 @@
         }
         .map-canvas {
             width: 100%;
-            height: 250px;
+            height: 220px;
             background-color: #e0e4e6;
             border-radius: 6px;
             position: relative;
@@ -190,7 +200,7 @@
         }
         .map-btn {
             flex: 1;
-            padding: 6px;
+            padding: 8px;
             font-size: 0.8rem;
             background: #eee;
             border: 1px solid #ccc;
@@ -201,19 +211,20 @@
         .map-btn:hover { background: #ddd; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
             margin-bottom: 40px;
+        }
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
         .card {
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
         }
         .card img {
             width: 100%;
@@ -249,28 +260,32 @@
         }
         .story-section {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-top: 30px;
+            margin-top: 20px;
             border-left: 5px solid #8b0000;
+            box-sizing: border-box;
         }
         .story-section h2 {
             color: #333;
             margin-top: 0;
+            font-size: 1.4rem;
         }
         .comments-section {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-top: 40px;
+            margin-top: 30px;
+            box-sizing: border-box;
         }
         .comments-section h2 {
             color: #222;
             border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
             margin-top: 0;
+            font-size: 1.4rem;
         }
         .comment-form {
             margin-bottom: 30px;
@@ -292,6 +307,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            width: 100%;
         }
         .comment-form button:hover {
             background: #555;
@@ -339,7 +355,3 @@
     </header>
 
     <div class="ticker-wrap">
-        <div class="ticker">
-            <span class="ticker-item">⚠️ LIVE UPDATES: CDC places Atlanta testing facility under total biological isolation protocol...</span>
-            <span class="ticker-item">⚠️ STOCK MARKET: Biotech shares plunge 12% following trial suspension announcements...</span>
-            <span class="ticker-item">⚠️ RUMOR CONTROL: Department of Defense denies mobilization of National Guard units in Georgia...</span>
